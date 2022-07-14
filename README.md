@@ -1,5 +1,5 @@
 # NumMethoden
-Beschreibung der Programme, implementiert für das numerische Methoden Praktikum SS2022
+Kommentare zu den Programmen, implementiert für das numerische Methoden Praktikum SS2022
 
 ## Aufgabe 1
 Das Programm fragt zunächst nach dem gewünsten Rechenverfahren.
