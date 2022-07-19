@@ -34,14 +34,16 @@ while (za1 < 100 )  and (abs(delta1) > toleranz) and (za2 < 100 )  and (abs(delt
         k = fegradienta2(y[i], x[i], a1, a2)
         gradienta2 = gradienta2 + k
 
-    # a2
-    delta2 = (gradienta2 * learning_rate)
-    a2 = a2 - delta2
-    za2= za2 +1
     # a1
     delta1 = (gradienta1 * learning_rate)
     a1 = a1 - delta1
     za1= za1 +1
+    
+    # a2
+    delta2 = (gradienta2 * learning_rate)
+    a2 = a2 - delta2
+    za2= za2 +1
+
 
 print('a1 beträgt:', a1)
 print('a2 beträgt:', a2)
