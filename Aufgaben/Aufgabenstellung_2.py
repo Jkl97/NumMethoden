@@ -21,26 +21,29 @@ def r(x, a1, a2): return a1 * x + a2 # Regressionsfunktion
 
 # a1
 
-while (za1 < 100 )  and (abs(delta1) > toleranz): # führe aus, solange die Änderung größer als die Toleranz ist und keine 100 Schritte gemacht wurden
+while (za1 < 100 )  and (abs(delta1) > toleranz) and (za2 < 100 )  and (abs(delta2) > toleranz): # führe aus, solange die Änderung größer als die Toleranz ist und keine 100 Schritte gemacht wurden
     gradienta1 = 0
+    gradienta2 = 0
+
+    # a1
     for i in range(n):  # Summe Gradienten für alle y bilden
         k = fegradienta1(y[i], x[i], a1, a2)
         gradienta1 = gradienta1 + k
-    delta1 = (gradienta1 * learning_rate)
-    a1 = a1 - delta1
-    za1= za1 +1
-print('a1 beträgt:', a1)
-
-# a2
-
-while (za2 < 100 )  and (abs(delta2) > toleranz): # führe aus, solange die Änderung größer als die Toleranz ist und keine 100 Schritte gemacht wurden
-    gradienta2 = 0
+    # a2
     for i in range(n):  # Summe Gradienten für alle y bilden
         k = fegradienta2(y[i], x[i], a1, a2)
         gradienta2 = gradienta2 + k
+
+    # a2
     delta2 = (gradienta2 * learning_rate)
     a2 = a2 - delta2
     za2= za2 +1
+    # a1
+    delta1 = (gradienta1 * learning_rate)
+    a1 = a1 - delta1
+    za1= za1 +1
+
+print('a1 beträgt:', a1)
 print('a2 beträgt:', a2)
 print('Die gesuchte Regressionsfunktion r(x) entspricht also: r(x)=', round(a1, 4), '* x +', round(a2, 4))
 
