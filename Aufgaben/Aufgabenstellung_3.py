@@ -12,7 +12,7 @@ import numpy as np
 
 A = np.array([[2, -1, 0],
               [-1, 2, -1],
-              [0, -2, 2]])
+              [0, -1, 2]]) #x2 von -2 auf -1 geändert
 
 b = np.array([[3, 4, 5]])
 b = b.T
